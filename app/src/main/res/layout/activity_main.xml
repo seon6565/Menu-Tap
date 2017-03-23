@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="comwow2778.naver.blog.app3.MainActivity"
+    android:orientation="vertical"
+    android:id="@+id/L0">
+
+
+    <LinearLayout
+        android:id="@+id/L1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/i1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="100dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/a1" />
+
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="겁나 맛있는 치킨"
+            android:textSize="20dp"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/L2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/i2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="100dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/a2" />
+
+        <TextView
+            android:id="@+id/t2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="새콤한 스파게티"
+            android:textSize="20dp"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+
+</FrameLayout>
