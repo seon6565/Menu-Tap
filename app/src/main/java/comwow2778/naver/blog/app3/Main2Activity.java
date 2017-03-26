@@ -76,7 +76,7 @@ public class Main2Activity extends AppCompatActivity {
         }
         else {
             double i = Double.parseDouble(a);
-            T2.setText((i * 3.305785) + "평");
+            T2.setText((i * 3.305785) + "제곱미터 입니다.");
         }
     }
 
@@ -87,7 +87,7 @@ public class Main2Activity extends AppCompatActivity {
         }
         else {
             double i = Double.parseDouble(a);
-            T2.setText((i / 3.305785) + "제곱미터");
+            T2.setText((i / 3.305785) + "평");
         }
     }
 
