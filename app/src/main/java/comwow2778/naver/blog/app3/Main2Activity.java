@@ -44,54 +44,50 @@ public class Main2Activity extends AppCompatActivity {
         else if(v.getId()==R.id.b3){
             area2();
         }
-        else if(v.getId()==R.id.tab1){
-            BGC();
-        }
-        else if(v.getId()==R.id.tab2){
-            BGC();
-        }
     }
 
     void BMI(){
         String a = E1.getText().toString();
         String b = E2.getText().toString();
-        Double i = Double.parseDouble(a) * 0.01;
-        Double j = Double.parseDouble(b);
-        Double bmi = j/(i*i);
-        if(bmi<18.5){
-            T1.setText("체중 부족입니다.");
-        }
-        else if(bmi>=18.5 && bmi<=22.9){
-            T1.setText("정상 입니다.");
-        }
-        else if(bmi>=23 && bmi <=24.9){
-            T1.setText("과체중 입니다.");
+        if(a.isEmpty() || b.isEmpty()){
+            T1.setText("빈칸이 없이 값을 입력하세요.");
         }
         else {
-            T1.setText("비만 입니다.");
-            T1.setTextColor(Color.RED);
+            Double i = Double.parseDouble(a) * 0.01;
+            Double j = Double.parseDouble(b);
+            Double bmi = j / (i * i);
+            if (bmi < 18.5) {
+                T1.setText("체중 부족입니다.");
+            } else if (bmi >= 18.5 && bmi <= 22.9) {
+                T1.setText("정상 입니다.");
+            } else if (bmi >= 23 && bmi <= 24.9) {
+                T1.setText("과체중 입니다.");
+            } else {
+                T1.setText("비만 입니다.");
+                T1.setTextColor(Color.RED);
+            }
         }
-
     }
 
     void area(){
         String a =E3.getText().toString();
-        double i = Double.parseDouble(a);
-        T2.setText((i*3.305785)+"평");
+        if(a.isEmpty()){
+            T2.setText("빈칸이 없이 값을 입력하세요.");
+        }
+        else {
+            double i = Double.parseDouble(a);
+            T2.setText((i * 3.305785) + "평");
+        }
     }
 
     void area2(){
         String a =E3.getText().toString();
-        double i = Double.parseDouble(a);
-        T2.setText((i/3.305785)+"제곱미터");
-    }
-
-    void BGC(){
-        if(L2.getVisibility() == View.VISIBLE){
-            L1.setBackgroundColor(Color.YELLOW);
+        if(a.isEmpty()){
+            T2.setText("빈칸이 없이 값을 입력하세요");
         }
-        else if(L3.getVisibility() == View.VISIBLE){
-            L1.setBackgroundColor(Color.BLUE);
+        else {
+            double i = Double.parseDouble(a);
+            T2.setText((i / 3.305785) + "제곱미터");
         }
     }
 
