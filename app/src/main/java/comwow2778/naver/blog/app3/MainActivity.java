@@ -1,5 +1,6 @@
 package comwow2778.naver.blog.app3;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.opengl.Matrix;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     FrameLayout L0;
     ImageView i1,i2;
     TextView t1,t2;
+    int i = 0;
+    int j = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         t1 = (TextView)findViewById(R.id.t1);
         t2 = (TextView)findViewById(R.id.t2);
 
+
         }
 
     @Override
@@ -42,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         if(item.getItemId()== R.id.red){
             L0.setBackgroundColor(Color.RED);
         }
@@ -55,16 +58,25 @@ public class MainActivity extends AppCompatActivity {
         else if(item.getItemId() == R.id.m4) {
             L2.setVisibility(View.INVISIBLE);
             L1.setVisibility(View.VISIBLE);
+            i=0; j=1;
+            i1.setRotation(i);
+            i1.setScaleX(j);
+            i1.setScaleY(j);
         }
         else if(item.getItemId() == R.id.m5) {
             L1.setVisibility(View.INVISIBLE);
             L2.setVisibility(View.VISIBLE);
+            i=0; j=1;
+            i2.setRotation(i);
+            i2.setScaleX(j);
+            i2.setScaleY(j);
         }
 
         else if(item.getItemId() == R.id.m2) {
             if(L1.getVisibility() == View.VISIBLE) {
                 t2.setVisibility(View.INVISIBLE);
                 t1.setVisibility(View.VISIBLE);
+
             }
             else if(L2.getVisibility() == View.VISIBLE){
                 t1.setVisibility(View.INVISIBLE);
@@ -73,21 +85,29 @@ public class MainActivity extends AppCompatActivity {
         }
         else if(item.getItemId() ==R.id.m1){
             if(L1.getVisibility() == View.VISIBLE){
-                i1.setRotation(30);
+                i += 30;
+                i1.setRotation(i);
             }
             else if(L2.getVisibility() == View.VISIBLE){
-                i2.setRotation(30);
+                i += 30;
+                i2.setRotation(i);
             }
         }
         else if(item.getItemId() ==R.id.m3){
             if(L1.getVisibility() == View.VISIBLE) {
-                i1.setScaleX(2);
-                i1.setScaleY(2);
+                j += 1;
+                i1.setScaleX(j);
+                i1.setScaleY(j);
             }
         else if(L2.getVisibility() == View.VISIBLE){
-                i2.setScaleX(2);
-                i2.setScaleY(2);
+                j += 1;
+                i2.setScaleX(j);
+                i2.setScaleY(j);
             }
+        }
+        else if(item.getItemId() == R.id.b10){
+            Intent intent = new Intent(this,Main2Activity.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
